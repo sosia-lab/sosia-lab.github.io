@@ -187,6 +187,15 @@
   },
   "active": "5ef66ab3e57529bc",
   "lastOpenFiles": [
+    "content/page/tags/index.md",
+    "content/page/now/index.md",
+    "content/page/archives/index.md",
+    "content/page/about/index.md",
+    "content/page/tags",
+    "content/page/now",
+    "content/page/archives",
+    "content/page/about",
+    "content/page",
     "templates/纯人类写作基地-文章.md",
     "content/posts/你好，纯人类写作基地/index- test test1.md",
     "content/posts/你好，纯人类写作基地",
@@ -201,11 +210,6 @@
     "static/img/avatar.png",
     "static/img",
     "public/未命名文件夹",
-    "static/未命名文件夹",
-    "public/categories/写作/page/1/index.html",
-    "public/categories/写作/page/1",
-    "public/categories/写作/page",
-    "public/categories/写作/index.xml",
     "content/posts/hello.md.md"
   ]
 }

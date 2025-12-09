@@ -231,47 +231,123 @@
   opacity: .9;
 }
 
-/* === 左侧主菜单字体再放大一档 === */
+
+/* === Sidebar 统一比例系统（覆盖最终版） === */
+:root {
+  /* 视觉层级：标题(最大) > 菜单(次大) > 副标题 > 正文小组件 */
+  --sidebar-avatar-size: 180px;
+  --sidebar-title-size: 3rem;       /* 站点标题：大字招牌 */
+  --sidebar-subtitle-size: 1.25rem; /* 副标题：辅助说明 */
+  --sidebar-menu-size: 2.2rem;      /* 主菜单：明显大，但不抢标题 */
+}
+
+/* 头像 */
+.sidebar .site-avatar img,
+.site-avatar img {
+  width: var(--sidebar-avatar-size) !important;
+  height: var(--sidebar-avatar-size) !important;
+  object-fit: cover;
+}
+.sidebar .site-avatar,
+.site-avatar {
+  margin-bottom: 2rem !important;
+}
+
+/* 标题 */
+.sidebar .site-name,
+.sidebar .site-title,
+.site-name,
+.site-title {
+  font-size: var(--sidebar-title-size) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  margin: .6rem 0 .25rem 0 !important;
+}
+
+/* 副标题 */
+.sidebar .site-description,
+.sidebar .site-subtitle,
+.site-description,
+.site-subtitle {
+  font-size: var(--sidebar-subtitle-size) !important;
+  line-height: 1.4 !important;
+  opacity: .85;
+}
+
+/* 主菜单 */
 .sidebar .menu a,
 .sidebar .main-menu a,
 .sidebar .menu .menu-item a {
-  font-size: 1.65rem !important;
-  line-height: 1.75 !important;
+  font-size: var(--sidebar-menu-size) !important;
+  line-height: 1.3 !important;
+  font-weight: 600;
+}
+.sidebar .menu li {
+  margin: .5rem 0 !important;
+}
+.sidebar .menu {
+  margin-top: 1.1rem !important;
 }
 
-/* 菜单分组/小标题（如果有） */
-.sidebar .menu span,
-.sidebar .menu .section-title {
-  font-size: 1.05rem !important;
+/* 图标跟随放大（如有） */
+.sidebar .menu svg,
+.sidebar .main-menu svg {
+  width: 1.15em;
+  height: 1.15em;
 }
 
-/* === 首页“杂志分区”标题 & 列表字号整体提升 === */
-.home-magazine {
-  font-size: 1.08rem;
-  gap: 2.2rem;
+/* 小屏保持“同样的层级感” */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-avatar-size: 150px;
+    --sidebar-title-size: 2.4rem;
+    --sidebar-subtitle-size: 1.1rem;
+    --sidebar-menu-size: 1.85rem;
+  }
+
+  .sidebar .menu li {
+    margin: .4rem 0 !important;
+  }
 }
 
-.home-block-title {
-  font-size: 2rem !important;
-  font-weight: 700 !important;
+/* === 顶部头像背景水印（不全页） === */
+
+/* 确保层级安全 */
+body {
+  position: relative;
 }
 
-.home-block-more {
-  font-size: 1.05rem !important;
+/* 顶部淡背景带 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 240px;                 /* 只占上方一段 */
+  background-image: url("/img/avatar.png");
+  background-repeat: no-repeat;
+  background-position: center 15%; /* “上方一点” */
+  background-size: 220px auto;     /* 不铺满 */
+  opacity: 0.08;                   /* 很淡，不抢内容 */
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* 分区内卡片标题（多选择器兜底，适配 Stack 的可能命名） */
-.home-block .article-title,
-.home-block .summary-title,
-.home-block .title {
-  font-size: 1.25rem !important;
-  line-height: 1.5 !important;
+/* 让站点主体在水印之上 */
+.main-container,
+.sidebar,
+.right-sidebar,
+.container {
+  position: relative;
+  z-index: 1;
 }
 
-/* 分区内摘要文字 */
-.home-block .article-excerpt,
-.home-block .summary,
-.home-block .content {
-  font-size: 1.05rem !important;
-  line-height: 1.8 !important;
+/* 小屏略收敛 */
+@media (max-width: 768px) {
+  body::before {
+    height: 200px;
+    background-size: 180px auto;
+    opacity: 0.07;
+  }
 }

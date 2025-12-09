@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Hugo build output (用 GitHub Actions 部署时不需要提交)
+public/
+
+# Hugo caches
+resources/
+
+# 其他可选
+.hugo_build.lock

@@ -12,3 +12,70 @@ hasCJKLanguage = true
   enabled = true
   local = true
   src = "img/avatar.png"
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "归档"
+    url = "/archives/"
+    weight = 2
+
+  [[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 3
+
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 4
+
+  [[menu.main]]
+    name = "现在"
+    url = "/now/"
+    weight = 5
+[params]
+  mainSections = ["posts"]
+  description = "真实的写作基地。"
+
+[params.sidebar]
+  emoji = "✍️"
+  subtitle = "写作？"
+
+[params.widgets]
+  homepage = [
+    { type = "search" },
+    { type = "archives" },
+    { type = "tag-cloud" }
+  ]
+  page = [
+    { type = "toc" }
+  ]
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "归档"
+    url = "/archives/"
+    weight = 2
+
+  [[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 3
+
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 4
+
+  [[menu.main]]
+    name = "现在"
+    url = "/now/"
+    weight = 5

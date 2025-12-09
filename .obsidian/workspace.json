@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/hello.md",
+                "file": "content/posts/你好，纯人类写作基地/index- test test.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "hello"
+              "title": "index- test test"
             }
           }
         ]
@@ -180,15 +180,24 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "5ef66ab3e57529bc",
   "lastOpenFiles": [
+    "templates/纯人类写作基地-文章.md",
+    "content/posts/你好，纯人类写作基地/index- test test.md",
+    "content/posts/你好，纯人类写作基地",
+    "content/posts/Untitled.md",
     "archetypes/default.md",
+    "templates",
+    "Untitled.md",
+    "Untitled.base",
+    "public/img/avatar.png",
+    "public/img/avatar_hu_f509edb42ecc0ebd.png",
     "content/posts/hello.md",
     "static/img/avatar.png",
-    "public/img/avatar.png",
     "static/img",
     "public/未命名文件夹",
     "static/未命名文件夹",
@@ -196,9 +205,6 @@
     "public/categories/写作/page/1",
     "public/categories/写作/page",
     "public/categories/写作/index.xml",
-    "public/categories/写作/index.html",
-    "public/categories/写作",
-    "public/posts/hello/index.html",
     "content/posts/hello.md.md"
   ]
 }

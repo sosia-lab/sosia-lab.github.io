@@ -1,195 +1,23 @@
-/* =========================================================
-   纯人类写作基地 · 视觉包（Hugo Theme Stack）
-   目标：更像“写作杂志/书房”，清爽、耐读、克制
-   ========================================================= */
-
-/* ---------- 0) 侧栏：头像/导航（含你提到的需求） ---------- */
-
-/* emoji 徽章：直接关闭显示（双保险） */
-.site-avatar .emoji,
-.site-avatar .avatar-emoji,
-.sidebar .site-avatar .emoji {
-  display: none !important;
-}
-
-/* 放大头像 */
+/* 头像放大约 ×2 */
 .sidebar .site-avatar img,
 .site-avatar img {
-  width: clamp(96px, 11vw, 132px);
-  height: clamp(96px, 11vw, 132px);
+  width: 180px !important;
+  height: 180px !important;
   border-radius: 999px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  object-fit: cover;
 }
 
-/* 站点名与副标题更“书房” */
-.sidebar .site-name,
-.sidebar header h1 {
-  font-size: 1.4rem;
-  letter-spacing: 0.02em;
-}
-.sidebar .site-description,
-.sidebar header p {
-  opacity: 0.75;
-  font-size: 0.98rem;
-}
-
-/* 左侧导航放大、间距更舒服 */
-.sidebar .menu,
+/* 左侧主菜单（你说的“目录/栏目”）放大显著 */
 .sidebar .menu a {
-  font-size: 1.08rem;
-}
-.sidebar .menu li {
-  margin: 0.15rem 0;
+  font-size: 1.35rem !important;
+  line-height: 1.6 !important;
 }
 
-/* ---------- 1) 全局阅读节奏：字体/行距/字距 ---------- */
-
-body {
-  line-height: 1.85;
-  letter-spacing: 0.01em;
-  text-rendering: optimizeLegibility;
+/* 文章页右侧 TOC 放大至少 ×3 的体感 */
+.widget--toc .toc {
+  font-size: 1.25rem !important;
 }
-
-/* 正文区域宽度更像“阅读型写作站” */
-.article-content {
-  max-width: 44rem;
-}
-
-/* 段间距 */
-.article-content p {
-  margin: 0.9em 0 1.05em;
-}
-
-/* ---------- 2) 标题层级：更清晰的写作结构 ---------- */
-
-.article-content h1,
-.article-content h2,
-.article-content h3,
-.article-content h4 {
-  letter-spacing: 0.01em;
-}
-
-.article-content h1 {
-  font-size: 2rem;
-  margin-top: 0.6em;
-  margin-bottom: 0.6em;
-}
-
-.article-content h2 {
-  font-size: 1.55rem;
-  margin-top: 1.4em;
-  margin-bottom: 0.6em;
-  padding-bottom: 0.2em;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-.article-content h3 {
-  font-size: 1.25rem;
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
-}
-
-.article-content h4 {
-  font-size: 1.08rem;
-  margin-top: 1.1em;
-  margin-bottom: 0.45em;
-  opacity: 0.9;
-}
-
-/* ---------- 3) 引用块：更像书页边注 ---------- */
-
-.article-content blockquote {
-  margin: 1.2em 0;
-  padding: 0.9em 1.1em;
-  border-left: 4px solid rgba(0,0,0,0.12);
-  background: rgba(0,0,0,0.03);
-  border-radius: 0.6rem;
-}
-
-.article-content blockquote p {
-  margin: 0.4em 0;
-}
-
-/* ---------- 4) 卡片与列表页：更干净的呼吸感 ---------- */
-
-/* 首页文章卡片间距 */
-.article-list .article-list--tile,
-.article-list article,
-.article-list .article {
-  margin-bottom: 1.2rem;
-}
-
-/* 卡片圆角与阴影微调（更克制） */
-.card,
-.widget,
-.article-list article {
-  border-radius: 1rem;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-}
-
-/* ---------- 5) 目录 TOC：你要的“放大目录” ---------- */
-
-.widget--toc,
-.toc {
-  font-size: 1.05rem;
-}
-
-.toc a {
-  line-height: 1.65;
-}
-
-/* TOC 层级缩进更优雅 */
-.toc ol,
-.toc ul {
-  padding-left: 1.05rem;
-}
-
-/* ---------- 6) 代码块：不抢戏，但好读 ---------- */
-
-.article-content pre,
-.article-content code {
-  font-size: 0.95em;
-}
-
-.article-content pre {
-  border-radius: 0.8rem;
-  padding: 1em 1.1em;
-}
-
-/* 行内 code 更柔和 */
-.article-content :not(pre) > code {
-  padding: 0.15em 0.35em;
-  border-radius: 0.35rem;
-  background: rgba(0,0,0,0.05);
-}
-
-/* ---------- 7) 图片：更像“图文杂志” ---------- */
-
-.article-content img {
-  border-radius: 0.9rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-/* ---------- 8) 深色模式微调（不刺眼） ---------- */
-
-/* Stack 主题通常会给暗色变量/类，这里做安全的轻微覆盖 */
-@media (prefers-color-scheme: dark) {
-  body {
-    letter-spacing: 0.012em;
-  }
-
-  .article-content blockquote {
-    border-left-color: rgba(255,255,255,0.16);
-    background: rgba(255,255,255,0.05);
-  }
-
-  .article-content :not(pre) > code {
-    background: rgba(255,255,255,0.08);
-  }
-
-  .card,
-  .widget,
-  .article-list article {
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  }
+.widget--toc .widget-title {
+  font-size: 1.5rem !important;
+  font-weight: 700;
 }

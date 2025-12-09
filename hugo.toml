@@ -8,52 +8,37 @@ hasCJKLanguage = true
   pagerSize = 10
 
 [outputs]
-  home = ["HTML", "RSS"]
-
-[params.sidebar]
-  emoji = ""
-  subtitle = "思考慢慢"
+  home = ["HTML", "RSS", "JSON"]
 
 [params]
-  mainSections = ["posts"]
+  mainSections = ["posts", "essay", "longform", "excerpt", "method"]
+
+[params.author]
+  name = "sosia-lab"
+
+
+[params.sidebar]
+  subtitle = "思考慢慢"
 
 [params.sidebar.avatar]
   enabled = true
   local = true
   src = "img/avatar.png"
 
+# 首页结构：写作入口 + 专题
+# 写作入口：Search
+# 专题导航：Tag cloud + Archives
+# 你之后如果做“随笔/长文/书摘/写作方法”四个分区，
+# 这里也可以加 categories（如果你主题版本支持）
 [params.widgets]
   homepage = [
     { type = "search" },
-    { type = "archives" },
-    { type = "tag-cloud" }
+    { type = "categories", params = { limit = 10 } },
+    { type = "tag-cloud", params = { limit = 20 } },
+    { type = "archives" }
   ]
   page = [
     { type = "toc" }
   ]
 
-[menu]
-  [[menu.main]]
-    name = "首页"
-    url = "/"
-    weight = 1
 
-  [[menu.main]]
-    name = "归档"
-    url = "/archives/"
-    weight = 2
-
-  [[menu.main]]
-    name = "标签"
-    url = "/tags/"
-    weight = 3
-
-  [[menu.main]]
-    name = "关于"
-    url = "/about/"
-    weight = 4
-
-  [[menu.main]]
-    name = "现在"
-    url = "/now/"
-    weight = 5

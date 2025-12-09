@@ -6,12 +6,10 @@ hasCJKLanguage = true
 
 [pagination]
   pagerSize = 10
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-[params.sidebar.avatar]
-  enabled = true
-  local = true
-  src = "img/avatar.png"
+
 [menu]
   [[menu.main]]
     name = "首页"
@@ -37,6 +35,7 @@ hasCJKLanguage = true
     name = "现在"
     url = "/now/"
     weight = 5
+
 [params]
   mainSections = ["posts"]
   description = "真实的写作基地。"
@@ -44,6 +43,11 @@ hasCJKLanguage = true
 [params.sidebar]
   emoji = "✍️"
   subtitle = "写作？"
+
+[params.sidebar.avatar]
+  enabled = true
+  local = true
+  src = "img/avatar.png"
 
 [params.widgets]
   homepage = [
@@ -54,28 +58,3 @@ hasCJKLanguage = true
   page = [
     { type = "toc" }
   ]
-[menu]
-  [[menu.main]]
-    name = "首页"
-    url = "/"
-    weight = 1
-
-  [[menu.main]]
-    name = "归档"
-    url = "/archives/"
-    weight = 2
-
-  [[menu.main]]
-    name = "标签"
-    url = "/tags/"
-    weight = 3
-
-  [[menu.main]]
-    name = "关于"
-    url = "/about/"
-    weight = 4
-
-  [[menu.main]]
-    name = "现在"
-    url = "/now/"
-    weight = 5

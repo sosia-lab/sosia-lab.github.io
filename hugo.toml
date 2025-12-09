@@ -1,0 +1,8 @@
+baseURL = "http://localhost/"
+languageCode = "zh-cn"
+title = "纯人类写作基地"
+theme = "stack"
+hasCJKLanguage = true
+
+[pagination]
+  pagerSize = 10
